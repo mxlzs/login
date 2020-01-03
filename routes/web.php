@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::any('/test/pay','TestController@alipay');
+
+Route::post('/api/test','Api\TestController@test');
+Route::post('/api/user/reg','Api\TestController@reg');
+Route::post('/api/user/login','Api\TestController@login');
+Route::get('/api/user/list','Api\TestController@userList');
