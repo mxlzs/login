@@ -19,4 +19,7 @@ Route::any('/test/pay','TestController@alipay');
 Route::post('/api/test','Api\TestController@test');
 Route::post('/api/user/reg','Api\TestController@reg');
 Route::post('/api/user/login','Api\TestController@login');
-Route::get('/api/user/list','Api\TestController@userList');
+Route::get('/api/user/list','Api\TestController@userList')->middleware('filter');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -64,26 +64,31 @@ class TestController extends Controller
     }
 
     public function userList(){
+        $list=User::all();
+        echo'<pre>'; print_r($list);echo'<pre>';
+//        $user_token=$_SERVER['HTTP_TOKEN'];
+//        echo 'user_token:'.$user_token;echo'<br>';
+//
+//        $current_url=$_SERVER['REQUEST_URI'];
+//        echo '当前URL'.$current_url;echo'<hr>';
+////        echo '<pre>';print_r($_SERVER);echo '<pre>';
+////        $url=$_SERVER[''].$_SERVER[''];
+//
+//        $redis_key='str:count:u:'.$user_token.'url:'.md5($current_url);
+//        echo 'redis_key:'.$redis_key;echo'<br>';
+//
+//        $count=Redis::get($redis_key);
+//        echo '访问次数'.$count;echo '<br>';
+//        if($count >=5){
+//            echo '访问次数以达到上限';
+//            Redis::expire($redis_key,10);
+//            die;
+//        }
+//        $count=Redis::incr($redis_key);
+//        echo 'count: '.$count;
+    }
 
-        $user_token=$_SERVER['HTTP_TOKEN'];
-        echo 'user_token:'.$user_token;echo'<br>';
+    public function md1(){
 
-        $current_url=$_SERVER['REQUEST_URI'];
-        echo '当前URL'.$current_url;echo'<hr>';
-//        echo '<pre>';print_r($_SERVER);echo '<pre>';
-//        $url=$_SERVER[''].$_SERVER[''];
-
-        $redis_key='str:count:u:'.$user_token.'url:'.md5($current_url);
-        echo 'redis_key:'.$redis_key;echo'<br>';
-
-        $count=Redis::get($redis_key);
-        echo '访问次数'.$count;echo '<br>';
-        if($count >=5){
-            echo '访问次数以达到上限';
-            Redis::expire($redis_key,10);
-            die;
-        }
-        $count=Redis::incr($redis_key);
-        echo 'count: '.$count;
     }
 }
